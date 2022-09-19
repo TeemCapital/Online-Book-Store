@@ -1,0 +1,20 @@
+<div class="container mt-5 pt-md-5" >
+  <div class="row mt-5">
+    <div class="col-md-6 rounded">
+      <img src="assets/images/signup.png" class="img-fluid" alt="">
+    </div>
+    <div class="col-md-6 border rounded mb-2" >
+      <h1 class="text-center text-muted">Signup Today</h1>
+      <form class="  p-4 rounded" [formGroup]="signupForm" >
+        <label class="form-label text-muted">Email</label>
+        <input formControlName="email" type="email" class="form-control">
+        <mat-error id="paragraph" *ngIf="signupForm.controls.email.errors?.['required']">Email is required!</mat-error>
+        <mat-error id="paragraph" *ngIf="signupForm.controls.email.errors?.['email']">Enter a valid Email Address</mat-error>
+        <br><label class="form-label text-muted">Password</label>
+        <input formControlName="password" type="password" class="form-control" >
+        <mat-error id="paragraph" *ngIf="signupForm.controls.password.errors?.['required']">Password is required!</mat-error><br>
+        <button routerLink="/login" [disabled]="!signupForm.valid" class="mx-auto rounded p-2 my-2" id="btn">Signup</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container" id="banner-bg" >
+  <div class="alert alert-secondary " *ngIf="bookedAlert===true" style="margin-top:70px ;"  role="alert">
+    You have successfully ordered {{books.name}}!
+  </div>
+  <div class="row p-5 rounded" style="margin-top:70px ;">
+    <div class="col-md-6 text-center my-auto">
+      <img src="{{books.imgUrl}}" class="img-fluid  rounded" alt="" style="height:300px ;">
+      <h1 class="text-white" *ngIf="books.length == 0">Add items to cart</h1>
+    </div>
+    <div class="col-md-6 my-auto text-white">
+      <h1>{{books.name}}</h1>
+      <h6>By {{books.author}}</h6>
+      <p>{{books.desc}}</p>
+      <h6>Quantity: x{{value}}</h6>
+      <div class="row">
+        <h4 class="text-danger fw-bolder">Price: {{FinalPrice | currency}} </h4>
+      <a class="btn btn-danger p-3 rounded" *ngIf="purchased==false" (click)="booked()">Buy Now</a>
+      <a class="btn p-3 rounded" routerLink="/books" *ngIf="purchased==true" (click)="remove()" id="btn">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+</div>

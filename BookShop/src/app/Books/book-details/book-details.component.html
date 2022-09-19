@@ -1,0 +1,21 @@
+<div class="container" id="banner-bg" >
+  <div class="row p-5 rounded" style="margin-top:70px ;">
+    <div class="col-md-6 text-center my-auto">
+      <img src="{{books.imgUrl}}" class="img-fluid  rounded" alt="" style="height:300px ;">
+    </div>
+    <div class="col-md-6 my-auto text-white">
+      <h1>{{books.name}}</h1>
+      <h6>By {{books.author}}</h6>
+      <p>{{books.desc}}</p>
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-center">
+          <mat-icon class="text-danger" *ngIf="value > 1" (click)="decrease()">remove_circle</mat-icon>
+          <input type="number" class="text-center" [value]="value" readonly>
+          <mat-icon class="text-danger" (click)="increase()">add_circle</mat-icon>
+        </div>
+        <h4 class="text-danger fw-bolder">Price: {{books.price | currency}} </h4>
+      <a routerLink="/book-payment" class="btn btn-danger p-3 rounded">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>

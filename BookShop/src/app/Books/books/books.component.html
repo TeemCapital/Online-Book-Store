@@ -1,0 +1,12 @@
+<div class="container-fluid py-2" id="banner-bg">
+  <h1 class="text-center text-white mt-5 pt-5">Our Collection</h1>
+  <div class="row mb-5">
+    <div class="col-md-3 p-2 mx-auto mt-3 card" id="card-bg" style="width:18rem;" *ngFor="let books of allBooks">
+      <img src="{{books.imgUrl}}" class="card-img-top rounded" style="height:18rem;" alt="">
+      <h5 class="text-white">{{books.name}}</h5>
+      <p class="text-white">Author: {{books.author}}</p>
+      <h5 class="text-danger">Price: {{books.price | currency}}</h5>
+      <a class="btn my-2" id="btn" routerLink="/books/{{books.id}}">Details</a>
+    </div>
+  </div>
+</div>
